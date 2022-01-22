@@ -1,23 +1,30 @@
 from flask import Flask, render_template, request
+import numpy as np
+from pickle import load
+
+loaded_model = load(open('model.pkl', 'rb')) 
+loaded_X_scaler = load(open('X_scaler.pkl', 'rb'))
+loaded_y_scaler = load(open('y_scaler.pkl', 'rb')) 
+
 
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def home():
     return render_template("index.html")
 
 
-@APP.ROUTE("/sub", methods = ['POST'])
-def submit():
+@app.route("/predict", methods = ['POST'])
+def predict():
 
-    # html -> .py
-    if request.method =="POST":
-        name = request.form["username"]
-    
-    # .py -> html
-    return render_template("sub.html", n = name)
+    int_features = [float(x) for x in request.form.values()]
+    arr = np.asarray([int_features])
+    arr = loaded_X_scaler.transform(arr)
+    reshape_arr = arr.reshape(1, -1)
+    prediction_data = loaded_model.predict(reshape_arr)
 
+    return render_template('index.html', prediction_text = 'House Price prediction is: {prediction_data}')
 
 if __name__ == "__main":
     app.run(debug=True)

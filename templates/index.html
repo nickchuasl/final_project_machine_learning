@@ -13,8 +13,19 @@
           We have linked our HTML Page
       </p>
 
-      <form action="" method="POST">
-        <input type = "text" name = "username" placeholder = "user name">
-        <input type = "submit">
+      <form action="{{ url_for('predict')}}" method="POST">
+        <input type = "text" name = "input_1" placeholder = "input_1">
+        <input type = "text" name = "input_2" placeholder = "input_2">
+        <input type = "text" name = "input_3" placeholder = "input_3">
+        <input type = "text" name = "input_4" placeholder = "input_4">
+        <input type = "text" name = "input_5" placeholder = "input_5">
+        <input type = "text" name = "input_6" placeholder = "input_6">
+        <input type = "text" name = "input_7" placeholder = "input_7">
+        <input type = "text" name = "input_8" placeholder = "input_8">
+        <button type ="submit" class="btn"> Predict</button>
       </form>
+      <br>
+      <br>
+
+      {{ prediction_text}}
   </body>
