@@ -1,3 +1,13 @@
+matplotlib==3.2.2
+flasgger==0.9.4
+seaborn==0.9.0
+joblib==0.14.0
+Flask==1.1.2
+numpy==1.16.5
+pandas==1.0.4
+scikit_learn==0.22.2
+gunicorn==20.0.4
+
 matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
 Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
 Flask-PyMongo==2.3.0
