@@ -26,5 +26,7 @@ def predict():
     prediction_data = round(prediction_data[0][0],0)
     return render_template('index.html', prediction_text = f'House Price prediction is: {prediction_data}')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+app.run('127.0.0.1', 5000)
