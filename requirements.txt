@@ -1,8 +1,9 @@
-matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
-Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
-Flask-PyMongo==2.3.0
-numpy @ file:///C:/ci/numpy_and_numpy_base_1618497418457/work
-numpydoc @ file:///tmp/build/80754af9/numpydoc_1605117425582/work
-pandas @ file:///C:/ci/pandas_1618365634936/work
-scikit-learn @ file:///C:/ci/scikit-learn_1614446896245/work
-gunicorn==20.1.0
+Flask==2.0.0
+Jinja2==3.0.0
+joblib==1.0.1
+matplotlib==3.2.2
+numpy==1.19.5
+pandas==1.0.5
+scikit-learn==0.24.2
+scipy==1.6.3
+sklearn==0.0
