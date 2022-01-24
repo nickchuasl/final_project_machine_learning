@@ -23,7 +23,8 @@ def predict():
     arr = loaded_X_scaler.transform(arr)
     reshape_arr = arr.reshape(1, -1)
     prediction_data = loaded_model.predict(reshape_arr)
-    prediction_data = round(prediction_data[0][0],0)
+    prediction_data = loaded_y_scaler.inverse_transform(prediction_data)
+    prediction_data = "${:,.0f}".format(round(prediction_data[0][0],0))
     return render_template('index.html', prediction_text = f'House Price prediction is: {prediction_data}')
 
 if __name__ == "__main__":
