@@ -15,7 +15,7 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/predict", methods = ['POST'])
+@app.route("/predict", methods = ["GET", 'POST'])
 def predict():
 
     int_features = [float(x) for x in request.form.values()]
@@ -29,4 +29,4 @@ def predict():
 if __name__ == "__main__":
     app.run(debug=True)
 
-app.run('127.0.0.1', 5000)
+# app.run('127.0.0.1', 5000)
